@@ -18,6 +18,7 @@ contract UniswapV3Factory is IUniswapV3Factory, UniswapV3PoolDeployer, NoDelegat
     mapping(uint24 => int24) public override feeAmountTickSpacing;
     /// @inheritdoc IUniswapV3Factory
     mapping(address => mapping(address => mapping(uint24 => address))) public override getPool;
+    address[] public override allPools;
 
     constructor() {
         owner = msg.sender;
@@ -47,7 +48,8 @@ contract UniswapV3Factory is IUniswapV3Factory, UniswapV3PoolDeployer, NoDelegat
         getPool[token0][token1][fee] = pool;
         // populate mapping in the reverse direction, deliberate choice to avoid the cost of comparing addresses
         getPool[token1][token0][fee] = pool;
-        emit PoolCreated(token0, token1, fee, tickSpacing, pool);
+        allPools.push(pool);
+        emit PoolCreated(token0, token1, fee, tickSpacing, pool, allPools.length);
     }
 
     /// @inheritdoc IUniswapV3Factory
@@ -69,5 +71,8 @@ contract UniswapV3Factory is IUniswapV3Factory, UniswapV3PoolDeployer, NoDelegat
 
         feeAmountTickSpacing[fee] = tickSpacing;
         emit FeeAmountEnabled(fee, tickSpacing);
+    }
+    function allPoolsLength() external view override returns (uint) {
+        return allPools.length;
     }
 }
