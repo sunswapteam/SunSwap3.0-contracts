@@ -20,7 +20,8 @@ interface IUniswapV3Factory {
         address indexed token1,
         uint24 indexed fee,
         int24 tickSpacing,
-        address pool
+        address pool,
+        uint256 poolLength
     );
 
     /// @notice Emitted when a new fee amount is enabled for pool creation via the factory
