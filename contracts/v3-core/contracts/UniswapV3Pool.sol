@@ -508,7 +508,7 @@ contract UniswapV3Pool is IUniswapV3Pool, NoDelegateCall {
             position.tokensOwed1 -= amount1;
             TransferHelper.safeTransfer(token1, recipient, amount1);
         }
-        Sync(int256(amount0), int256(amount1), slot0.sqrtPriceX96, liquidity);
+        emit Sync(int256(amount0), int256(amount1), slot0.sqrtPriceX96, liquidity);
         emit Collect(msg.sender, recipient, tickLower, tickUpper, amount0, amount1);
     }
 
