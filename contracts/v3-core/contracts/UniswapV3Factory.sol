@@ -75,4 +75,7 @@ contract UniswapV3Factory is IUniswapV3Factory, UniswapV3PoolDeployer, NoDelegat
     function allPoolsLength() external view override returns (uint) {
         return allPools.length;
     }
+    function getPairHash() public pure returns (bytes32) {
+        return keccak256(type(UniswapV3Pool).creationCode);
+    }
 }
