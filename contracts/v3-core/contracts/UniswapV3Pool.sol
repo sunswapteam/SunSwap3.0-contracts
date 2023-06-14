@@ -482,7 +482,6 @@ contract UniswapV3Pool is IUniswapV3Pool, NoDelegateCall {
         IUniswapV3MintCallback(msg.sender).uniswapV3MintCallback(amount0, amount1, data);
         if (amount0 > 0) require(balance0Before.add(amount0) <= balance0(), 'M0');
         if (amount1 > 0) require(balance1Before.add(amount1) <= balance1(), 'M1');
-        emit Sync(int256(amount0), int256(amount1), slot0.sqrtPriceX96, liquidity);
         emit Mint(msg.sender, recipient, tickLower, tickUpper, amount, amount0, amount1);
     }
 
@@ -508,7 +507,6 @@ contract UniswapV3Pool is IUniswapV3Pool, NoDelegateCall {
             position.tokensOwed1 -= amount1;
             TransferHelper.safeTransfer(token1, recipient, amount1);
         }
-        emit Sync(int256(amount0), int256(amount1), slot0.sqrtPriceX96, liquidity);
         emit Collect(msg.sender, recipient, tickLower, tickUpper, amount0, amount1);
     }
 
@@ -538,7 +536,6 @@ contract UniswapV3Pool is IUniswapV3Pool, NoDelegateCall {
                 position.tokensOwed1 + uint128(amount1)
             );
         }
-        emit Sync(int256(-amount0), int256(-amount1), slot0.sqrtPriceX96, liquidity);
         emit Burn(msg.sender, tickLower, tickUpper, amount, amount0, amount1);
     }
 
@@ -782,7 +779,6 @@ contract UniswapV3Pool is IUniswapV3Pool, NoDelegateCall {
             IUniswapV3SwapCallback(msg.sender).uniswapV3SwapCallback(amount0, amount1, data);
             require(balance1Before.add(uint256(amount1)) <= balance1(), 'IIA');
         }
-        emit Sync(int256(amount0), int256(amount1), state.sqrtPriceX96, state.liquidity);
         emit Swap(msg.sender, recipient, amount0, amount1, state.sqrtPriceX96, state.liquidity, state.tick);
         slot0.unlocked = true;
     }
@@ -829,7 +825,6 @@ contract UniswapV3Pool is IUniswapV3Pool, NoDelegateCall {
             if (uint128(fees1) > 0) protocolFees.token1 += uint128(fees1);
             feeGrowthGlobal1X128 += FullMath.mulDiv(paid1 - fees1, FixedPoint128.Q128, _liquidity);
         }
-        emit Sync(int256(amount0), int256(amount1), slot0.sqrtPriceX96, liquidity);
         emit Flash(msg.sender, recipient, amount0, amount1, paid0, paid1);
     }
 
@@ -863,7 +858,6 @@ contract UniswapV3Pool is IUniswapV3Pool, NoDelegateCall {
             protocolFees.token1 -= amount1;
             TransferHelper.safeTransfer(token1, recipient, amount1);
         }
-        emit Sync(int256(amount0), int256(amount1), slot0.sqrtPriceX96, liquidity);
         emit CollectProtocol(msg.sender, recipient, amount0, amount1);
     }
 }

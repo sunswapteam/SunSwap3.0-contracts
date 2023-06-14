@@ -118,16 +118,4 @@ interface IUniswapV3PoolEvents {
     /// @param amount0 The amount of token0 protocol fees that is withdrawn
     /// @param amount0 The amount of token1 protocol fees that is withdrawn
     event CollectProtocol(address indexed sender, address indexed recipient, uint128 amount0, uint128 amount1);
-
-    /// @notice sync of the pool state changes
-    /// @param amount0 The delta of the token0 balance of the pool
-    /// @param amount1 The delta of the token1 balance of the pool
-    /// @param sqrtPriceX96 The sqrt(price) of the pool after the swap, as a Q64.96
-    /// @param liquidity The liquidity of the pool after the swap
-    event Sync( 
-        int256 amount0, 
-        int256 amount1,
-        uint160 sqrtPriceX96,
-        uint128 liquidity
-    );
 }
