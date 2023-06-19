@@ -9,7 +9,8 @@ module.exports = {
       NFTDescriptor: 'TYw6GK94KkvyDUp7WfG8wHrjLe1bvVL5Xb',
       NftPositionDescriptor: 'TWXGuSNf8yxJC7hqNfHNbr4z921RvLeNCy',
       NonfungiblePositionManager: 'TLSWrv7eC1AZCXkRjpqMZUmvgd99cj7pPF',
-      TickLens : 'TBBjWiPHouzEx2QRjBzTw9EA8YjG43XiAi'
+      TickLens : 'TBBjWiPHouzEx2QRjBzTw9EA8YjG43XiAi',
+      multiCall : 'TBoFgjwfvu5SvT3KMCQYXHQ97bnHAjrDq3'
     },
     nile: {
       netId: 'nile',
