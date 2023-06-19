@@ -4,8 +4,8 @@ pragma solidity >=0.6.0;
 import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
 
 library TransferHelper {
-    address constant USDTAddr = 0xECa9bC828A3005B9a3b909f2cc5c2a54794DE05F; // nile usdt address
-    // address constant USDTAddr = 0xA614F803B6FD780986A42C78EC9C7F77E6DED13C; // miannet USDT address 
+    // address constant USDTAddr = 0xECa9bC828A3005B9a3b909f2cc5c2a54794DE05F; // nile usdt address
+    address constant USDTAddr = 0xa614f803B6FD780986A42c78Ec9c7f77e6DeD13C; // miannet USDT address 
     /// @notice Transfers tokens from the targeted address to the given destination
     /// @notice Errors with 'STF' if transfer fails
     /// @param token The contract address of the token to be transferred

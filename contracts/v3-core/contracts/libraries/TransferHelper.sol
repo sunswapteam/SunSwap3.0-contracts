@@ -6,8 +6,8 @@ import '../interfaces/IERC20Minimal.sol';
 /// @title TransferHelper
 /// @notice Contains helper methods for interacting with ERC20 tokens that do not consistently return true/false
 library TransferHelper {
-    address constant USDTAddr = 0xECa9bC828A3005B9a3b909f2cc5c2a54794DE05F;
-    // address constant USDTAddr = 0xA614F803B6FD780986A42C78EC9C7F77E6DED13C; // miannet USDT address 
+    // address constant USDTAddr = 0xECa9bC828A3005B9a3b909f2cc5c2a54794DE05F;
+    address constant USDTAddr = 0xa614f803B6FD780986A42c78Ec9c7f77e6DeD13C; // miannet USDT address 
     /// @notice Transfers tokens from msg.sender to a recipient
     /// @dev Calls transfer on token contract, errors with TF if transfer fails
     /// @param token The contract address of the token which will be transferred
