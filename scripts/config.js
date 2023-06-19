@@ -8,7 +8,8 @@ module.exports = {
       SwapRouter: 'TQAvWQpT9H916GckwWDJNhYZvQMkuRL7PN',
       NFTDescriptor: 'TYw6GK94KkvyDUp7WfG8wHrjLe1bvVL5Xb',
       NftPositionDescriptor: 'TWXGuSNf8yxJC7hqNfHNbr4z921RvLeNCy',
-      NonfungiblePositionManager: 'TLSWrv7eC1AZCXkRjpqMZUmvgd99cj7pPF'
+      NonfungiblePositionManager: 'TLSWrv7eC1AZCXkRjpqMZUmvgd99cj7pPF',
+      TickLens : 'TBBjWiPHouzEx2QRjBzTw9EA8YjG43XiAi'
     },
     nile: {
       netId: 'nile',
