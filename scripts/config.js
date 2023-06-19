@@ -3,7 +3,12 @@ module.exports = {
       netId: 'mainnet',
       rpcURL: 'https://api.trongrid.io',
       WTRX: 'TNUC9Qb1rRpS5CbWLmNMxXBjyFoydXjWFR',
-      UniswapV3Factory: 'TThJt8zaJzJMhCEScH7zWKnp5buVZqys9x'
+      UniswapV3Factory: 'TThJt8zaJzJMhCEScH7zWKnp5buVZqys9x',
+      Quoter: 'TLhZ48yfHygMLM2uZr87zJJusHjGen97gh',
+      SwapRouter: 'TQAvWQpT9H916GckwWDJNhYZvQMkuRL7PN',
+      NFTDescriptor: 'TYw6GK94KkvyDUp7WfG8wHrjLe1bvVL5Xb',
+      NftPositionDescriptor: 'TWXGuSNf8yxJC7hqNfHNbr4z921RvLeNCy',
+      NonfungiblePositionManager: 'TLSWrv7eC1AZCXkRjpqMZUmvgd99cj7pPF'
     },
     nile: {
       netId: 'nile',
