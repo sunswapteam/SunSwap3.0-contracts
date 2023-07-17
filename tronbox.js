@@ -43,21 +43,21 @@ Then, run the migration with:
       network_id: '9'
     },
     compilers: {
-      solc: {
-        version: '0.7.6',
-        optimizer: {
-          enabled: true,
-          runs: 200
-        },
-      }
+      // solc: {
+      //   version: '0.7.6',
+      //   optimizer: {
+      //     enabled: true,
+      //     runs: 200
+      //   },
+      // }
     }
   },
   // solc compiler optimize
   solc: {
-  //   optimizer: {
-  //     enabled: true,
-  //     runs: 200
-  //   },
+    optimizer: {
+      enabled: true,
+      runs: 200
+    },
   //   evmVersion: 'istanbul'
   }
 }
